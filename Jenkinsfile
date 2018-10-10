@@ -23,8 +23,8 @@ node {
         echo 'push successfull'
     }
     stage('Deploy docker image'){
-        sh 'chmod 400 spring-boot-docker-key-pair.pem'
-        sh "ssh -o StrictHostKeyChecking=no  -i spring-boot-docker-key-pair.pem ec2-user@ec2-13-127-150-179.ap-south-1.compute.amazonaws.com 'bash -s' < docker_run_aws_script.sh"
+        sh 'chmod 400 /home/deep/Practice/aws/aws_ec2.pem'
+        sh "ssh -o StrictHostKeyChecking=no  -i /home/deep/Practice/aws/aws_ec2.pem ubuntu@ec2-54-235-32-169.compute-1.amazonaws.com 'bash -s' < docker_run_aws_script.sh"
     }
 
 }
